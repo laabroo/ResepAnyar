@@ -27,7 +27,6 @@ _.extend(exports, {
         var parent = new VLayout({
             style: {
                 width: 'fill-parent'
-
             }
         });
         parent.add(title);
@@ -79,7 +78,8 @@ _.extend(exports, {
                             app.setContent('details', {
                                 _title: data.text.title_,
                                 _link: data.text.link_,
-                                _pubdate: data.text.pubdate_
+                                _pubdate: data.text.pubdate_,
+                                _description : data.text.description_
                             });
                         });
                         temp.on('focus', function() {
@@ -90,6 +90,7 @@ _.extend(exports, {
                             });
                         });
                         view.add(item, temp);
+
                         i++;
                     });
                     view.focusItem(0);

@@ -13,6 +13,7 @@ _.extend(exports, {
         console.log('Thumbnail : ' + data.thumbnail);
         var self = this;
         var temp = this;
+        var desc = this;
 
         self.clear();
         temp.clear();
@@ -21,7 +22,7 @@ _.extend(exports, {
                 width: 'fill-parent',
                 height: 'wrap-content',
                 'font-weight': 'bold',
-                'background-color': '#00BFFF    '
+                'background-color': '#00BFFF'
 
             }
         }));
@@ -34,7 +35,14 @@ _.extend(exports, {
             }
         }));
 
-        temp.add('description', new TextView({
+        temp.add('link', new TextView({
+            style: {
+                width: 'fill-parent',
+                height: 'wrap-content'
+
+            }
+        }));
+        desc.add('description', new TextView({
             style: {
                 width: 'fill-parent',
                 height: 'wrap-content'
@@ -44,7 +52,8 @@ _.extend(exports, {
         console.log('Details Title : ' + data._title);
         console.log('Details Pubdate : ' + data._pubdate);
         self.get('title').label(data._title);
-        temp.get('description').label(data._pubdate);
+        temp.get('link').label(data._link);
+        desc.get('description').label(data._description);
     },
 
 
